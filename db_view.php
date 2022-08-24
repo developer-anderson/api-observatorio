@@ -28,7 +28,7 @@ if (isset($_POST['new_material'])) {
         $db->query($sql);
     }
    
-    $resultado = array("Status" => true);
+    $resultado = array("status" => true, "desc" => "Material adicionado com sucesso");
 
 
 } elseif (isset($_POST['edit_material'])) {
@@ -52,10 +52,14 @@ if (isset($_POST['new_material'])) {
         $db->query($sql);
     }
    
-    $resultado = array("Status" => true);
+    $resultado = array("status" => true, "desc" => "Material editado com sucesso");
 } 
 elseif (isset($_POST['view_material'])) {
     $sql  = "select * from  ob_material_didatico where 1=1";
+    if(isset($_POST['id_material_didatico']))
+    {
+        $sql .= " and id_material_didatico = ".$_POST['id_material_didatico'];
+    }
     if(isset($_POST['id_professor']))
     {
         $sql .= " and id_professor = ".$_POST['id_professor'];
@@ -237,4 +241,8 @@ elseif (isset($_POST['delete_relato'])) {
     $db->query($sql);
     $resultado = array("status" => true, "desc" => "Relato excluido com sucesso");
 } 
+if(!$resultado)
+{
+    $resultado = array("status" => false, "desc" => "Não há registros"); 
+}
 echo json_encode($resultado);
