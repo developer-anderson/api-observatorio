@@ -241,6 +241,12 @@ elseif (isset($_POST['delete_relato'])) {
     $db->query($sql);
     $resultado = array("status" => true, "desc" => "Relato excluido com sucesso");
 } 
+elseif (isset($_POST['fl_cadastro'])) {
+    $sql  = "update ob_material_didatico set fl_cadastro = ".$_POST['fl_cadastro']." where id_material_didatico = ".$_POST['id_material_didatico'];
+  
+    $db->query($sql);
+    $resultado = array("status" => true, "desc" => "Situação do material modificado com sucesso");
+} 
 if(!$resultado)
 {
     $resultado = array("status" => false, "desc" => "Não há registros"); 
