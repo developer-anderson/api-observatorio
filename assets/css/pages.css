@@ -1,0 +1,29 @@
+/* materiais-didaticos */
+.col-materiais-didaticos h2 {
+  color: #04389b;
+  font-weight: bolder;
+  font-size: 50px;
+  padding: 20px 0;
+}
+
+.dados-material-didatico {
+  width: 50%;
+}
+
+.button-pages {
+  font-size: 1rem;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .col-materiais-didaticos h2 {
+    font-size: 25px;
+    padding: 12px 0;
+  }
+
+  .dados-material-didatico {
+    width: 100%;
+  }
+}

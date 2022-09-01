@@ -7,7 +7,7 @@ $resultado = array();
 $mes = date("m");
 $dia = date("d");
 $ano = date("Y");
-
+header("Access-Control-Allow-Origin: *");
 if (isset($_POST['new_material'])) {
     $sql  = "insert into ob_material_didatico set id_professor = ".$_POST['id_professor'].", titulo = '".$_POST['titulo']."'".", descricao = '".$_POST['descricao']."'".", link_drive = '".$_POST['link_drive']."'".", fl_aprovado = '".$_POST['fl_aprovado']."'";
     
@@ -69,11 +69,13 @@ elseif (isset($_POST['view_material'])) {
         $sql .= " and fl_aprovado = ".$_POST['fl_aprovado'];
     }
     $result = $db->query($sql);
-   
-    while ($row = $result->fetch_assoc()) 
+    $retorno = array();
+    $resultado = $result->fetch_all(MYSQLI_ASSOC);
+    foreach($resultado as $item)
     {
-        $resultado[] =  $row;
+        $retorno[] = $item;
     }
+    
 } 
 elseif (isset($_POST['delete_material'])) {
     $sql  = "delete from  ob_material_didatico where 1=1";
@@ -241,8 +243,8 @@ elseif (isset($_POST['delete_relato'])) {
     $db->query($sql);
     $resultado = array("status" => true, "desc" => "Relato excluido com sucesso");
 } 
-elseif (isset($_POST['fl_cadastro'])) {
-    $sql  = "update ob_material_didatico set fl_cadastro = ".$_POST['fl_cadastro']." where id_material_didatico = ".$_POST['id_material_didatico'];
+elseif (isset($_POST['fl_aprovado'])) {
+    $sql  = "update ob_material_didatico set fl_aprovado = ".$_POST['fl_aprovado']." where id_material_didatico = ".$_POST['id_material_didatico'];
   
     $db->query($sql);
     $resultado = array("status" => true, "desc" => "Situação do material modificado com sucesso");
@@ -251,4 +253,5 @@ if(!$resultado)
 {
     $resultado = array("status" => false, "desc" => "Não há registros"); 
 }
-echo json_encode($resultado);
+
+echo json_encode($retorno);

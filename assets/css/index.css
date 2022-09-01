@@ -1,0 +1,329 @@
+#area-professor {
+  background-image: url(../img/bg-header.png);
+  padding: 20px;
+}
+
+.col-area-professor {
+  background: linear-gradient(90.94deg, #489e6f 73.34%, #a8d230 130.58%);
+  text-align: center;
+}
+
+.area-professor-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.area-professor-title figure {
+  margin: 0 20px;
+}
+
+.area-professor-title h1 {
+  color: #fff;
+  font-size: 35px;
+}
+
+/* menu-lateral */
+.menu-list {
+  list-style: none;
+  box-shadow: 4px 6px 8px 3px #6666663d;
+  padding: 0;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.menu-list li:first-child {
+  background: #FC6902;
+  box-shadow: 2px 1px 21px -5px #00000054;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 17px;
+}
+
+.menu-list li:first-child i {
+  margin: 0 5px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-list li:first-child:hover {
+  text-decoration: none;
+}
+
+.menu-list li {
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.menu-list li a {
+  padding: 15px 24px;
+  color: #666666;
+  font-size: 17px;
+  display: flex;
+}
+
+
+.menu-list li:hover {
+  text-decoration: underline;
+}
+
+.menu-list li i {
+  color: #3c3c434d;
+  margin: 0 6px;
+}
+
+/* banner-comunicado */
+#box-conteudo {
+  width: 100%;
+}
+
+.col-banner-comunicado figure {
+  margin: 15px 0;
+}
+
+/* materiais-cadastrados */
+.card-materiais {
+  border-radius: 13px;
+  color: #fff;
+  text-align: center;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-materiais h2 {
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+.card-materiais h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.card-absolute {
+  position: absolute;
+  background: linear-gradient(269.16deg, #03379a 6.27%, #366a99 78.41%);
+  border-radius: 0px 0px 19px 19px;
+  top: 0;
+  right: -15px;
+}
+
+.card-materiais-cadastrados {
+  background: linear-gradient(112.22deg, #fb6801 8.49%, #ff9c57 85.58%);
+}
+
+.card-materiais-em-aprovacao {
+  background: linear-gradient(112.22deg, #ff9b55 8.49%, #489e6f 85.58%);
+}
+
+.card-materiais-aprovado {
+  background: linear-gradient(112.22deg, #428d7d 8.49%, #489e6f 85.58%);
+}
+
+/* cleberson code */
+
+
+.page-container {
+  padding: 20px;
+}
+
+.page-container h2 {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0;
+  color: #428d7d;
+}
+
+.page-container form {}
+
+.page-container form label {
+  font-weight: 600;
+}
+
+.page-container form small {
+  font-size: 10px;
+  color: #FF0000;
+}
+
+.btn-group a {
+  min-width: 30px;
+}
+
+.thAcoes {
+  width: 100px;
+}
+
+table.dataTable {
+  background: #F6F6F6;
+  padding: 0 20px 20px;
+}
+
+#listar_length, #listar_filter, #listar_info, #listar_paginate {
+  font-size: 12px;
+  padding-bottom: 20px;
+}
+
+.map {
+  position: relative;
+  text-align: center;
+}
+
+.map path[class] {
+  cursor: pointer;
+}
+
+.map path[class]:hover {
+  fill: #428d7d;
+}
+
+.map .modal-infomapa {
+  background: linear-gradient(325.71deg, #438E7E 29.47%, #489E6F 88.56%);
+  border-radius: 13px;
+  width: 400px;
+  height: auto;
+  color: #FFFFFF;
+  box-sizing: border-box;
+  padding: 20px 50px 50px;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  display: none;
+  opacity: 0;
+  transition: all 1s;
+  zoom: -3;
+}
+
+.map .modal-infomapa.show{
+  display: block;
+  opacity: 1;
+  transition: all 1s;
+}
+
+.map .modal-infomapa .modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 40px;
+}
+
+.map .modal-infomapa .modal-title {}
+
+.map .modal-infomapa .modal-title h1,
+.map .modal-infomapa .modal-title h2,
+.map .modal-infomapa .modal-title h3 {
+  line-height: 45px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+.map .modal-infomapa .modal-title h1 {
+  font-weight: 700;
+  font-size: 37px;
+  line-height: 37px;
+}
+
+.map .modal-infomapa .modal-title h2 {
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 27px;
+}
+
+.map .modal-infomapa .modal-title h3 {
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 23px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.map .modal-infomapa .modal-body {
+  font-size: 14px;
+}
+
+.map .modal-infomapa .modal-body .option strong {
+  background: #FFFFFF;
+  border-radius: 28px;
+  display: block;
+  width: 100%;
+  color: #428d7d;
+  padding: 0px 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.map .modal-infomapa .modal-body .option p {
+  padding: 0px 20px;
+  margin-bottom: 0;
+}
+
+table.dataTable tbody tr{
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column-reverse;
+  }
+
+  .card-materiais {
+    padding: 60px 0;
+    width: 85%;
+    margin: auto;
+    height: auto;
+  }
+
+  .card-materiais-cadastrados {
+    margin-bottom: 18px;
+  }
+
+  .card-materiais-em-aprovacao {
+    margin-bottom: 18px;
+  }
+
+  .card-materiais-aprovado {
+    margin-bottom: 18px;
+  }
+
+  aside.menu-lateral {
+    padding: 20px;
+  }
+
+  .menu-list {
+    margin: 0;
+    width: 100%;
+  }
+
+  .page-container h2 {
+    font-size: 20px;
+  }
+
+  .map .modal-infomapa, .map svg{
+    width: 100%;
+    height: auto;
+  }
+
+  .filter-title{
+    cursor: pointer;
+  }
+
+  .filter{
+    display: none;
+  }
+
+  .menu-lateral.col-sm-3.my-5{
+    margin-top: 0!important;
+    margin-bottom: 0!important;
+  }
+
+  .map{
+    min-height: 800px;
+  }
+}
