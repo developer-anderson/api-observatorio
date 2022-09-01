@@ -16,14 +16,14 @@ if (isset($_POST['view_material'])) {
     }
     $result = $db->query($sql);
  
-    $resultado = $result->fetch_all(MYSQLI_ASSOC);
+    //$resultado = $result->fetch_all(MYSQLI_ASSOC);
    
     
 } 
 else{
     $sql  = "select * from  ob_material_didatico where 1=1";
     $result = $db->query($sql);
-    $resultado = $result->fetch_all(MYSQLI_ASSOC);
+    //$resultado = $result->fetch_all(MYSQLI_ASSOC);
 }
 if (isset($_POST['delete_material'])) {
     $sql  = "delete from  ob_material_didatico where 1=1";
@@ -36,10 +36,10 @@ if (isset($_POST['delete_material'])) {
         $sql .= " and id_material_didatico = ".$_POST['id_material_didatico'];
     }
     $db->query($sql);
-    $resultado = array("Status" => true);
+    //$resultado = array("Status" => true);
     $sql  = "select * from  ob_material_didatico where 1=1";
     $result = $db->query($sql);
-    $resultado = $result->fetch_all(MYSQLI_ASSOC);
+    //$resultado = $result->fetch_all(MYSQLI_ASSOC);
 } 
 ?>
 
@@ -87,7 +87,7 @@ if (isset($_POST['delete_material'])) {
                                 </tr>
                             </thead>
                             <tbody id='listar-materiais'>
-                                <?php foreach($resultado as $item){ 
+                                <?php while ($item = $result->fetch_assoc()) { 
                                         if($item['fl_aprovado'] == 1)
                                         {
                                             $situacao = "Aprovado";

@@ -12,14 +12,14 @@ if (isset($_POST['view_material'])) {
     }
     $result = $db->query($sql);
  
-    $resultado = $result->fetch_all(MYSQLI_ASSOC);
+   // $resultado = $result->fetch_all(MYSQLI_ASSOC);
    
     
 } 
 else{
     $sql  = "select * from  ob_relato where 1=1";
     $result = $db->query($sql);
-    $resultado = $result->fetch_all(MYSQLI_ASSOC);
+    //$resultado = $result->fetch_all(MYSQLI_ASSOC);
 }
 if (isset($_POST['delete_material'])) {
     $sql  = "delete from  ob_relato where 1=1";
@@ -32,10 +32,10 @@ if (isset($_POST['delete_material'])) {
         $sql .= " and id_relato = ".$_POST['id_relato'];
     }
     $db->query($sql);
-    $resultado = array("Status" => true);
+    //$resultado = array("Status" => true);
     $sql  = "select * from  ob_relato where 1=1";
     $result = $db->query($sql);
-    $resultado = $result->fetch_all(MYSQLI_ASSOC);
+    //$resultado = $result->fetch_all(MYSQLI_ASSOC);
 } 
 ?>
 
@@ -81,7 +81,7 @@ if (isset($_POST['delete_material'])) {
                             </tr>
                         </thead>
                             <tbody >
-                                <?php foreach($resultado as $item){ ?>
+                                <?php while ($item = $result->fetch_assoc()) { ?>
                                 <tr>
                                     <td><?php echo($item['titulo']); ?></td>
                                     <td class="text-center"><i class="fa-solid fa-check"></i></td>

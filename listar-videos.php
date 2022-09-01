@@ -1,5 +1,7 @@
 <?php include 'header.php'; 
-
+ini_set('display_errors',1);
+ini_set('display_startup_erros',1);
+error_reporting(E_ALL);
 if (isset($_POST['view_material'])) {
     $sql  = "select * from  ob_video where 1=1";
     if(isset($_POST['id_professor']))
@@ -12,15 +14,15 @@ if (isset($_POST['view_material'])) {
     }
     $result = $db->query($sql);
  
-    $resultado = $result->fetch_all(MYSQLI_ASSOC);
+    //$resultado = $result->fetch_all(MYSQLI_ASSOC);
    
     
 } 
 else{
     $sql  = "select * from  ob_video where 1=1";
     $result = $db->query($sql);
-    $resultado = $result->fetch_all(MYSQLI_ASSOC);
-    print_r($resultado);
+    //$resultado = $result->fetch_all(MYSQLI_ASSOC);
+    //print_r($resultado);
 }
 if (isset($_POST['delete_material'])) {
     $sql  = "delete from  ob_video where 1=1";
@@ -33,10 +35,10 @@ if (isset($_POST['delete_material'])) {
         $sql .= " and id_video = ".$_POST['id_video'];
     }
     $db->query($sql);
-    $resultado = array("Status" => true);
+    //$resultado = array("Status" => true);
     $sql  = "select * from  ob_video where 1=1";
     $result = $db->query($sql);
-    $resultado = $result->fetch_all(MYSQLI_ASSOC);
+    //$resultado = $result->fetch_all(MYSQLI_ASSOC);
 } 
 ?>
 
@@ -82,7 +84,7 @@ if (isset($_POST['delete_material'])) {
                             </tr>
                         </thead>
                         <tbody >
-                                <?php foreach($resultado as $item){ ?>
+                                <?php while ($item = $result->fetch_assoc()) { ?>
                                 <tr>
                                     <td><?php echo($item['titulo']); ?></td>
                                     <td class="text-center"><i class="fa-solid fa-check"></i></td>
